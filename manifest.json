@@ -1,0 +1,39 @@
+{
+  "name": "Inject and read",
+  "version": "1.0.0",
+  "description": "bla",
+  "author": "user name",
+  "manifest_version": 2,
+  "short_name": "Inject and read",
+  // "background": {
+  //   "scripts": ["rearrange.js"]
+  // },
+   "content_scripts": [
+    {
+      "matches": [ "http://*/*", "https://*/*" ],
+      "js": [
+        "rearrange.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "contextMenus",
+    "http://*/*",
+    "https://*/*",
+    "storage"
+  ],
+  "web_accessible_resources": [
+    "shared/*"
+  ],
+  "browser_action": {
+    "default_icon": "icon16.png"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
